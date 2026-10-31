@@ -20,26 +20,27 @@ Segunda Tela streams your Windows desktop to an Android tablet and sends the tab
 ## How it works
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph PC [Windows PC]
-        VDD[Virtual Display Driver<br/>extra monitor]
-        CAP[Capture<br/>ddagrab on GPU<br/>mss fallback on CPU]
-        ENC[Scale and convert<br/>Intel Quick Sync<br/>H.264 encode with x264]
-        INJ[InjectTouchInput<br/>multi-touch]
-        SRV[server.py<br/>TCP port 7777]
+        direction TB
+        VDD[Virtual Display Driver]
+        CAP[Capture: ddagrab GPU]
+        ENC[Quick Sync scale, x264 H.264]
+        SRV[server.py :7777]
+        INJ[InjectTouchInput]
         VDD --> CAP --> ENC --> SRV
         SRV --> INJ
     end
 
     subgraph TAB [Android tablet]
-        APP[DisplayActivity<br/>SurfaceView]
-        DEC[H.264 decoder<br/>MediaCodec]
-        APP --- DEC
+        direction TB
+        APP[DisplayActivity]
+        DEC[MediaCodec decoder]
+        APP --> DEC
     end
 
-    SRV -- "video frames" --> APP
-    APP -- "touch events and frame acks" --> SRV
-    SRV <-. "USB: adb reverse<br/>Wi-Fi: local IP" .-> APP
+    SRV -- video frames --> APP
+    APP -- touch and acks --> SRV
 ```
 
 1. **Virtual monitor.** Windows gets an extra display from the Virtual Display Driver, sized to the tablet's resolution at 60 Hz.
