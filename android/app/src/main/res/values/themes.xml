@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Tema" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorAccent">#22D3EE</item>
+        <item name="android:colorPrimary">#4338CA</item>
+        <item name="android:colorPrimaryDark">#0B0D1A</item>
+        <item name="android:windowBackground">@color/fundo</item>
+        <item name="android:statusBarColor">#0B0D1A</item>
+        <item name="android:navigationBarColor">#0B0D1A</item>
+    </style>
+
+    <color name="fundo">#0B0D1A</color>
+
+    <string name="app_name">Segunda Tela</string>
+    <string name="subtitle">Use o tablet como tela do seu PC</string>
+    <string name="usb">USB (cabo)</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="host_hint">IP do PC (ex.: 192.168.0.10)</string>
+    <string name="port_hint">Porta</string>
+    <string name="connect">Conectar</string>
+    <string name="help_usb">Ligue o cabo, abra o Segunda Tela no PC e clique em Iniciar. Esta tela abre sozinha.</string>
+    <string name="help_wifi">No PC, escolha Wi-Fi, clique em Iniciar e digite aqui o IP mostrado lá.</string>
+</resources>

@@ -1,0 +1,22 @@
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.keystore
+*.jks
+
+# Python / PyInstaller
+__pycache__/
+*.pyc
+pc/build/
+pc/dist/
+dist/
+*.spec
+
+# Sistema
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
